@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>本社システム担当よりお知らせ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="h-screen w-screen flex justify-center items-center bg-gray-100">
+    <div class="min-h-screen flex flex-col justify-center items-center">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-6">現在メンテナンス中です</h1>
+        <p class="text-gray-600 text-lg mb-4">
+          サイトをご利用いただきありがとうございます。ただいまシステムのメンテナンスを行っております。
+        </p>
+        <p class="text-gray-600 mb-6">
+          メンテナンス終了は<strong>2024年12月1日 午前0:00</strong>を予定しています。
+          ご不便をおかけして申し訳ありませんが、終了後に再度アクセスいただけますようお願いいたします。
+        </p>
+        <div class="p-4">
+          <p class="text-gray-700">
+            お急ぎのご用件がある場合は、本社 加藤 までご連絡ください:
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // メンテナンス終了日時
+    const maintenanceEnd = new Date("2024-12-01T00:00:00");
+  
+    // 現在の日時
+    const now = new Date();
+
+    console.log(now)
+  
+    // 比較して内容を切り替え
+    if (now >= maintenanceEnd) {
+      document.body.innerHTML = `
+        <div class="h-screen w-screen flex justify-center items-center bg-gray-100">
+          <div class="text-center">
+            <h1 class="text-4xl font-bold text-red-600 mb-6">【重要】ドメインが変更になります</h1>
+            <p class="text-gray-600 text-lg mb-4">
+              サイトをご利用いただきありがとうございます。
+              メンテナンス完了に伴い、サイトのURL（ドメイン）が変更となりました。
+            </p>
+            <p class="text-gray-600 text-lg mb-6">
+              新しいURLはこちらです：
+              <a href="https://klcloud.jp" class="text-blue-600 underline font-medium">
+                https://klcloud.jp
+              </a>
+            </p>
+            <p class="text-gray-600 text-sm mb-6">
+              ブックマークをされている方は、ブックマークの更新をお願いいたします。
+              ご迷惑をおかけし申し訳ありませんが、引き続きよろしくお願いいたします。
+            </p>
+            <a href="https://klcloud.jp" class="mt-4 px-6 py-3 bg-blue-600 text-white rounded shadow hover:bg-blue-700">
+              新しいサイトに移動する
+            </a>
+          </div>
+        </div>`;
+    }
+  </script>
+</body>
+</html>
